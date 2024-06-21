@@ -11,6 +11,8 @@ import { Project } from "@/components/Project";
 import { stackData } from "@/utils/stackData";
 import { userData } from "@/utils/userData";
 
+import Typewriter from "typewriter-effect";
+
 // Page Style
 import {
   Header,
@@ -23,7 +25,7 @@ import {
   ProjectsAreaContent,
   ProjectAreaWrapperColumns,
 } from "./style";
-
+import { stackLearning } from "@/utils/stackLearning";
 
 export const Home = (): JSX.Element => {
   return (
@@ -32,12 +34,21 @@ export const Home = (): JSX.Element => {
         <Container>
           <HeaderContent>
             <Text as="h1" type="heading1" color="grey5">
-              Criando experiências por meio da tecnologia{" "}
+              Pedro Bernardes
+            </Text>
+            <Text as="h1" type="heading1" color="grey5">
+              <Typewriter
+                options={{
+                  strings: ["Desenvolvedor Front-End" ],
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
             </Text>
             <Text type="body1" color="grey6">
-              Sou estudante de programação na Kenzie Academy Brasil, participei
-              de diversos projetos resolvendo problemas de alto nível e
-              desenvolvendo habilidades
+              Apaixonado pela programação e em constante evolução! Meu objetivo
+              é ser minha melhor versão e elevar minhas habilidades e meu
+              trabalho sempre ao próximo nível.
             </Text>
             <HeaderButtonsArea>
               <Button as="a" href="#projetos">
@@ -45,6 +56,9 @@ export const Home = (): JSX.Element => {
               </Button>
               <Button as="a" href="#tecnologias" type="btLink" color="grey5">
                 Tecnologias
+              </Button>
+              <Button as="a" href="https://drive.google.com/file/d/1EkZfi5D_liWwdMaZY5coTZBYqBSvRhFk/view?usp=sharing" type="btLink" color="grey5" target="_blank">
+                Download CV
               </Button>
             </HeaderButtonsArea>
           </HeaderContent>
@@ -60,13 +74,21 @@ export const Home = (): JSX.Element => {
               <Stack key={index} title={stack.title} icon={stack.img} />
             ))}
           </StackCards>
+          <Text as="h4" type="heading3" color="grey1">
+            Estou aprendendo
+          </Text>
+          <StackCards>
+            {stackLearning.map((stack, index) => (
+              <Stack key={index} title={stack.title} icon={stack.img} />
+            ))}
+          </StackCards>
         </Container>
       </StackSection>
       <ProjectsArea id="projetos">
         <Container>
           <ProjectAreaWrapperColumns>
             <ProjectsAreaSocialMediaMessage>
-              <Text as="h2" type="heading4" color="grey1">
+              <Text as="h2" type="heading4" color="grey1" css={{ marginTop: "$2" }}>
                 Vamos trocar uma ideia?
               </Text>
               <Text as="p" type="body1" color="grey2">
@@ -84,15 +106,11 @@ export const Home = (): JSX.Element => {
               </Button>
             </ProjectsAreaSocialMediaMessage>
             <ProjectsAreaContent>
-              <Text type="body1" color="grey2" css={{ marginBottom: "$2" }}>
-                Projetos
-              </Text>
               <Text as="h3" type="heading2" color="grey1">
-                Originalidade e{" "}
-                <Text as="span" color="brand1" type="heading2">
-                  dedicação
-                </Text>{" "}
-                em cada detalhe
+                Meus projetos
+              </Text>
+              <Text type="body1" color="grey2" css={{ marginTop: "$2" }}>
+                Ao longo do curso da Kenzie Academy aprendi diversas tecnologias e desenvolvi inúmeros projetos. Abaixo estão meus principais trabalhos.
               </Text>
               <Project />
             </ProjectsAreaContent>

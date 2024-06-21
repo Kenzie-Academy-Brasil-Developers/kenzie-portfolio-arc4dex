@@ -1,7 +1,7 @@
 import imgHTML from "../public/static/img/stack/html.svg";
 import imgCSS from "../public/static/img/stack/css.svg";
 import imgJS from "../public/static/img/stack/js.svg";
-import imgNode from "../public/static/img/stack/node.svg";
+import { SiTypescript } from 'react-icons/si'
 import imgStyled from "../public/static/img/stack/styled.svg";
 import imgReact from "../public/static/img/stack/react.svg";
 import { SiMaterialui } from 'react-icons/si'
@@ -40,5 +40,9 @@ export const stackData = [
   {
     title: "GitHub",
     img: FaGithub,
-  }
+  }, 
+  {
+    title: "TypeScript",
+    img: SiTypescript,
+  },
 ];
